@@ -1,8 +1,30 @@
 // Task 1
 // Есть некоторая строка (const str = 'fgfggg';), что будет, если мы возьмем str[0]
+//* str[0] = 'f'
 
 // Task 2
 // Реализуйте необходимый код, что бы выражение (2).plus(3).minus(1) сработало и вернуло 4
+
+Number.prototype.plus = function (n) {
+    return this + n
+}
+Number.prototype.minus = function (n) {
+    return this - n
+}
+
+console.log('lesson 8.2: ' + (2).plus(3).minus(1))
+
+function add(n) {
+    return function sum(a) {
+        if(a === undefined) {
+            return n
+        } else {
+            return add(n + a)
+        }
+    }
+}
+
+console.log('les 8.2add: ' + add(2)(3)(5)(-2)())
 
 // Task 3
 // Реализуйте функцию, которая принимает следующие аргументы (строки) '*', '1', 'b', '1c', и возвращает строку '1*b*1c'
@@ -13,50 +35,50 @@
 // В цикле
 
 const tree = {
-	valueNode: 3,
-	next: [{
-		valueNode: 1,
-		next: null
-	},
-		{
-			valueNode: 3,
-			next: null
-		},
-		{
-			valueNode: 2,
-			next: null
-		},
-		{
-			valueNode: 2,
-			next: [
-				{
-					valueNode: 1,
-					next: null
-				},
-				{
-					valueNode: 5,
-					next: null
-				}
-			]
-		}]
+    valueNode: 3,
+    next: [{
+        valueNode: 1,
+        next: null
+    },
+        {
+            valueNode: 3,
+            next: null
+        },
+        {
+            valueNode: 2,
+            next: null
+        },
+        {
+            valueNode: 2,
+            next: [
+                {
+                    valueNode: 1,
+                    next: null
+                },
+                {
+                    valueNode: 5,
+                    next: null
+                }
+            ]
+        }]
 };
 
 // Task 5
 // исправить код, что бы работал правильно
 
 for (var i = 0; i < 10; i++) {
-	setTimeout(function () {
-		console.log(i);
-	}, 100);
+    setTimeout(function () {
+        console.log(i);
+    }, 100);
 }
 
 // Task 6
 // Реализуйте функцию Foo, что бы все корректно работало
 
 function Book(name, author) {
-	this.name = name;
-	this.author = author;
-	return this;
+    this.name = name;
+    this.author = author;
+    return this;
 }
 
 // function Foo(Book, 'Учебник javascript', 'Петр Сергеев')
@@ -91,23 +113,23 @@ function Book(name, author) {
 // getTreeValues(tree); // => [1, 2, 3, 4, 5, 6, 7]
 
 const tree2 = {
-	value: 1,
-	children: [
-		{
-			value: 2,
-			children: [
-				{ value: 4 },
-				{ value: 5 },
-			]
-		},
-		{
-			value: 3,
-			children: [
-				{ value: 6 },
-				{ value: 7 },
-			]
-		}
-	]
+    value: 1,
+    children: [
+        {
+            value: 2,
+            children: [
+                {value: 4},
+                {value: 5},
+            ]
+        },
+        {
+            value: 3,
+            children: [
+                {value: 6},
+                {value: 7},
+            ]
+        }
+    ]
 };
 
 // Task 15
@@ -149,13 +171,13 @@ const tree2 = {
 // Что выведет консоль?
 
 Promise
-	.resolve()
-	.then(() => console.log(1))
-	.then(() => console.log(2))
-	.then(() => console.log(3));
+    .resolve()
+    .then(() => console.log(1))
+    .then(() => console.log(2))
+    .then(() => console.log(3));
 
 Promise
-	.resolve()
-	.then(() => console.log(4))
-	.then(() => console.log(5))
-	.then(() => console.log(6));
+    .resolve()
+    .then(() => console.log(4))
+    .then(() => console.log(5))
+    .then(() => console.log(6));
